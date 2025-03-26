@@ -1,0 +1,49 @@
+.descktop-4k{
+    display: none;
+}
+
+.descktop-2k{
+    display: none;
+}
+
+.descktop-1080p{
+    display: none;
+}
+
+.notebook{
+    display: none;
+}
+
+.mobile{
+    display: flex;
+}
+
+@media screen and (max-width: 3840px) {
+    .descktop-4k{
+        display: flex;
+    }    
+}
+
+@media screen and (max-width: 1920px) {
+    .descktop-2k{
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .descktop-1080p{
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .notebook{
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mobile{
+        display: flex;
+    }
+}

@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header a:hover{
+    color:aqua;
+    text-decoration: underline;
+}
+
+@media (prefers-color-scheme: light) {
+
+}
