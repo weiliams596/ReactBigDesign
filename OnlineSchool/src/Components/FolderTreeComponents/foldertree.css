@@ -1,0 +1,13 @@
+.folder-tree{
+    display: flex;
+    flex-direction: column;
+}
+
+.folder-tree-node{
+    margin-left: 20px;
+}
+
+.folder-tree-node i{
+    width: 15px;
+    height: 15px;
+}
