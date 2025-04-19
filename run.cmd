@@ -4,4 +4,4 @@ cd ./OnlineSchool
 start npm run dev
 
 cd ../Server
-start node app.js
+start npm run dev

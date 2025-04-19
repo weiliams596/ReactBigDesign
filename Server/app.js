@@ -6,24 +6,20 @@ const PORT = process.env.PORT || 3000;
 
 async function init() {
     try {
-        console.log('Initializing server...');
-        const controllerRoutes = await ctlFunc();
-        console.log(`Registering ${controllerRoutes.length} routes`);
-        console.log(controllerRoutes);
-        controllerRoutes.forEach(route => {
-            console.log(`Registering route: ${route.path}`);
-            app.get(route.path, async (req, res) => {
-                route.func.get(req, res);
-            });
-            app.post(route.path, async (req, res) => {
-                route.func.post(req, res);
-            });
-            app.put(route.path, async (req, res) => {
-                route.func.put(req, res);
-            });
-            app.delete(route.path, async (req, res) => {
-                route.func.delete(req, res);
-            });
+        const routes = await ctlFunc();
+        routes.map((route)=>{
+            if(route.func.get){
+                app.get(route.path, (req,res)=>{route.func.get(req,res)});
+            }
+            if(route.func.post){
+                app.post(route.path, (req,res)=>{route.func.post(req,res)});
+            }
+            if(route.func.put){
+                app.put(route.path, (req,res)=>{route.func.put(req,res)});
+            }
+            if(route.func.delete){
+                app.delete(route.path, (req,res)=>{route.func.delete(req,res)});
+            }
         });
     } catch (err) {
         console.error(err);

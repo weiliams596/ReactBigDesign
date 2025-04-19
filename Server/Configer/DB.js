@@ -8,7 +8,7 @@ const sequelize = new Sequelize(
   {
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: "postgres",
+    dialect: process.env.DB_DIALECT,
   }
 );
 
@@ -16,7 +16,7 @@ sequelize
   .authenticate()
   .then(() => {
     console.log('Sequelize connected successfully!');
-    return sequelize.sync();
+    return sequelize.sync({alter: true});
   })
   .then(() => {
     console.log('Database synced!');
